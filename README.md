@@ -4,7 +4,7 @@ A fully connected deep neural network for image classification on the FashionMNI
 
 ## Results Summary
 
-| Configuration                    | Test Accuracy |
+| Configuration                     | Test Accuracy |
 |----------------------------------|---------------|
 | SGD, lr=0.01, Kaiming (baseline) | 86.73%        |
 | RMSprop, lr=0.001                | 88.96%        |
@@ -12,6 +12,14 @@ A fully connected deep neural network for image classification on the FashionMNI
 | **Adam, lr=0.001 (best)**        | **89.57%**    |
 | SGD + Batch Norm, lr=0.01        | 86.92%        |
 
+## Project Structure
+
+```
+.
+├── NNClassifier.ipynb  # Main training notebook
+├── NeuralNetwork.pdf   # Full report with results and analysis
+└── data/               # FashionMNIST dataset (auto-downloaded)
+```
 
 ## Requirements
 
@@ -32,15 +40,13 @@ pip install torch torchvision numpy scikit-learn matplotlib tqdm
 
 ## Usage
 
-Run the full experiment suite:
+Launch the notebook:
 
 ```bash
-python NNClassifier.py
+jupyter notebook NNClassifier.ipynb
 ```
 
-This will sequentially train and evaluate models across all configurations: SGD, RMSprop, and Adam at learning rates 0.01 and 0.001, Random Normal, Xavier, and Kaiming weight initializations, and batch normalization variants.
-
-Each run prints per-epoch training loss and validation accuracy, and displays loss/accuracy curves at the end.
+Run cells sequentially, or use **Run All**. The two summary cells at the bottom, which are the test accuracy bar chart and the optimizer comparison overlay, should be run only after all training cells have completed.
 
 ## Model Architecture
 
